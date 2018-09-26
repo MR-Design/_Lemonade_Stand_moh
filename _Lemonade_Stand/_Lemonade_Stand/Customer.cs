@@ -8,10 +8,20 @@ namespace _Lemonade_Stand
 {
     class Customer
     {
-         string hight;  string medium;  string low;
-        string CustomerBuyingChance;
+        double hight; double medium; double low;
+        double CustomerBuyingChance;
 
-        public string CustomersBuyingChance(string inAHurry, string thirsty, string notThursty)
+
+        public void BuyingChanceProperties()
+        {
+            Random random = new Random();
+
+            double hight = random.Next((90 / 100), 1);
+            double medium = random.Next((50 / 100), (90 / 100));
+            double low = random.Next(0, (50 / 100));
+        }
+
+        public double CustomersBuyingChance(double inAHurry, double thirsty, double notThursty)
         {
             if (CustomerBuyingChance == inAHurry)
             {
