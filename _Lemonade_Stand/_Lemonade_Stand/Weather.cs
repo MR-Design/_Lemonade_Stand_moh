@@ -8,42 +8,37 @@ namespace _Lemonade_Stand
 {
     public class Weather
     {
-        int Cold; int Cloudy; int Mogy; int Sunny;
+        int Cold; int Cloudy; int Muggy; int Sunny;
+
+
         public int GenerateDailyTemp()
         {
             Random random = new Random();
             int todayTemp = random.Next(50, 110);
-            return todayTemp;
-            
-            
-            
+            return todayTemp;  
         }
-        // Rainy , Suny , cloudy 
+       
         public int GenerateDailyWeather()
         {
             Random random = new Random();
-            int todayWeather = random.Next(0, 3);
+            int todayWeather = random.Next(1, 4);
             
-
-            if (todayWeather == 0)
+            if (todayWeather == 1)
             {
                 todayWeather = Cold;
             }
-            else if (todayWeather == 1)
+            else if (todayWeather == 2)
             {
                 todayWeather = Cloudy;
             }
-
-            else if (todayWeather == 2)
+            else if (todayWeather == 3)
             {
-                todayWeather = Mogy;
+                todayWeather = Muggy;
             }
             else
             {
                 todayWeather = Sunny;
             }
-
-            Console.WriteLine(" The Weather ToDay Is " + todayWeather);
             return todayWeather;
         }
 
