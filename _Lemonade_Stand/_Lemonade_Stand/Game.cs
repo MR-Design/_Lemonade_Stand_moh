@@ -8,7 +8,6 @@ namespace _Lemonade_Stand
 {
     class Game
     {
-        
 
     }
 }

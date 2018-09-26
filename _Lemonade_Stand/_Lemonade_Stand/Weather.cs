@@ -9,7 +9,7 @@ namespace _Lemonade_Stand
     public class Weather
     {
         int Cold; int Cloudy; int Muggy; int Sunny;
-
+        int todayWeather;
 
         private int GenerateDailyTemp()
         {
@@ -18,10 +18,10 @@ namespace _Lemonade_Stand
             return todayTemp;  
         }
 
-        private int GenerateDailyWeather()
+        private void GenerateDailyWeather()
         {
             Random random = new Random();
-            int todayWeather = random.Next(1, 4);
+            todayWeather = random.Next(1, 4);
             
             if (todayWeather == 1)
             {
@@ -39,7 +39,6 @@ namespace _Lemonade_Stand
             {
                 todayWeather = Sunny;
             }
-            return todayWeather;
         }
 
 

@@ -8,27 +8,26 @@ namespace _Lemonade_Stand
 {
     class Customer
     {
-        public class Prices : Feeling
-        {
+        Feeling feeling = new Feeling();
             double BuyingChanceByPrice;
             double price;
             public void BuyingChancesByPrice()
             {
                 if (price <= 1 && price > 75 / 100)
                 {
-                    BuyingChanceByPrice = low;
+                    BuyingChanceByPrice = feeling.low;
                 }
                 else if (price < 74 / 100 && price > 50 / 100)
                 {
-                    BuyingChanceByPrice = medium;
+                    BuyingChanceByPrice = feeling.medium;
                 }
                 else
                 {
-                    BuyingChanceByPrice = hight;
+                    BuyingChanceByPrice = feeling.hight;
                 }
 
             }
-        }
+        
 
 
         
