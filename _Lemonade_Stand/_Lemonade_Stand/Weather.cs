@@ -11,14 +11,14 @@ namespace _Lemonade_Stand
         int Cold; int Cloudy; int Muggy; int Sunny;
 
 
-        public int GenerateDailyTemp()
+        private int GenerateDailyTemp()
         {
             Random random = new Random();
             int todayTemp = random.Next(50, 110);
             return todayTemp;  
         }
-       
-        public int GenerateDailyWeather()
+
+        private int GenerateDailyWeather()
         {
             Random random = new Random();
             int todayWeather = random.Next(1, 4);
