@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace _Lemonade_Stand
 {
-    class Feeling
+    public class Feeling
     {
-        double hight; double medium; double low;
+        public double hight; public double medium; public double low;
         double BuyingChanceByFeeling;
 
 
-        private void BuyingChanceFeelingProperties()
+        public void BuyingChanceFeelingProperties()
         {
             Random random = new Random();
 
