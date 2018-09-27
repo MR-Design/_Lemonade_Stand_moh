@@ -30,7 +30,11 @@ namespace _Lemonade_Stand
                 // Function MakeRecipe.
                 inventory.MakeRecipe();
             }
-
+            else
+            {
+                // Break statement
+                return;
+            }
 
 
 
