@@ -10,10 +10,10 @@ namespace _Lemonade_Stand
     {
         public double Picelemons = 100/1000; public double Picesugar = 50 /1000;
         public double PiceCubes = 25 / 1000; public double Picecups = 20 / 1000;
-        double CostOfRecipe; public int Numlemons; public int Numsugar; public int NumiceCubes; public int Numcups;
+        double CostOfRecipe; public int Numlemons; public int NumSugar; public int NumiceCubes; public int NumCups;
         public int nNlemons; public int nNsugar; public int nNiceCubes; public int nNcups;
         double InventoryCost; 
-        double Wallet = 20.00;     
+        public double Wallet = 20.00;     
 
  //        I want the basic Lemonade Stand gameplay to be present
 
@@ -32,13 +32,16 @@ namespace _Lemonade_Stand
             Console.WriteLine("Enter How Many Cuop you Would Like.. NOTE!! Will Cost You $" + Picecups);
             nNcups = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("You Have " + Numlemons + " Lemons " + Numsugar +
-                " Sugar And  " + NumiceCubes + " IceCubes" + Numcups + " Cups");
+            Console.WriteLine("You Have " + Numlemons + " Lemons " + NumSugar +
+                " Sugar And  " + NumiceCubes + " IceCubes" + NumCups + " Cups");
+
+            
+
 
             Numlemons += nNlemons;
-            Numsugar += nNlemons;
+            NumSugar += nNlemons;
             NumiceCubes += nNlemons;
-            Numcups += nNlemons;
+            NumCups += nNlemons;
 
         }
 
@@ -46,14 +49,14 @@ namespace _Lemonade_Stand
 
         public void GetInventoryCost()
         {
-            InventoryCost = (Numlemons * Picelemons) + (Numsugar * Picesugar) + (NumiceCubes * PiceCubes) + (Numcups * Picecups);
+            InventoryCost = (Numlemons * Picelemons) + (NumSugar * Picesugar) + (NumiceCubes * PiceCubes) + (NumCups * Picecups);
         }
         public void PlayerWallet()
         {
             Wallet -= InventoryCost;
         }
 
-        public void PlayerCanNotBuy()
+        public void PlayerCanBuyOrNo()
         {
             if (Wallet < 0)
             {
@@ -62,9 +65,12 @@ namespace _Lemonade_Stand
             }
             else if (Wallet <= InventoryCost)
             {
-                Console.WriteLine("Sorry You Don't have enought Money :( You Are Short X $ /n Try To Bay Less Inventories");
+                Console.WriteLine("Sorry You Don't have enought Money :( You Are Short "+Wallet +" $ /n Try To Bay Less Inventories");
                 GetInventory();
-
+            }
+            else
+            {
+                Console.WriteLine(" You Still Have " + "$ " + Wallet);
             }
         }
 
@@ -76,16 +82,16 @@ namespace _Lemonade_Stand
             Numlemons = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Enter How Many Sugar you Would Like");
-            Numsugar = Convert.ToInt32(Console.ReadLine());
+            NumSugar = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Enter How Many Lemens you Would Like");
             NumiceCubes = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Here's Your Recipe "+Numlemons+" lemons "+ Numsugar+" sugar And  "  +NumiceCubes+ " iceCubes");
+            Console.WriteLine("Here's Your Recipe "+Numlemons+" lemons "+ NumSugar+" sugar And  "  +NumiceCubes+ " iceCubes");
         }
         public void GetCostOfRecipe()
         {
-            CostOfRecipe = (Numlemons * Picelemons) + (Numsugar * Picesugar) + (NumiceCubes * PiceCubes);
+            CostOfRecipe = (Numlemons * Picelemons) + (NumSugar * Picesugar) + (NumiceCubes * PiceCubes);
         }
 
         

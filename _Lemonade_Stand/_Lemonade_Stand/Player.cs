@@ -14,19 +14,23 @@ namespace _Lemonade_Stand
 
             public void SetInventory()
             {
-            Console.WriteLine(" You Have " + inventory.Numlemons + " : Lemons" +
-                inventory.Numsugar + " : Sugars" + inventory.NumiceCubes + " : Ice Cubes" + inventory.Numcups + " :  Cups");
-            Console.WriteLine(" Press any Key To Get More Inventories");
+                Console.WriteLine(" You Have " + inventory.Numlemons + " : Lemons" +
+                inventory.NumSugar + " : Sugars" + inventory.NumiceCubes + " : Ice Cubes" + inventory.NumCups + " :  Cups");
+                Console.WriteLine(" You Have " + "$ "+inventory.Wallet);
+                Console.WriteLine(" Press any Key To Get More Inventories");
+                Console.ReadKey();
 
-            inventory.GetInventory();
-
+                inventory.GetInventory();
+                inventory.PlayerCanBuyOrNo();
             }
 
-        
+
+        // I Need to Shpw User The Money he have , The Weather  then He decide how Much he wanna sel
+
 
         //  the ability to make a recipe for my lemonade, 
         // so that I can include x-amount of lemons, x-amount of sugar, and x-amount of ice.
-         int lemons = 4;  int sugar = 4;  int iceCubes = 4;
+        int lemons = 4;  int sugar = 4;  int iceCubes = 4;
         public void SetRecipe()
         {
             Console.WriteLine("Your Curent Recipe Is Basic" + lemons + " : Lemons" + sugar + " : Sugars" + iceCubes + " : Ice Cubes");

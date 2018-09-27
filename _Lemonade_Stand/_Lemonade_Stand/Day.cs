@@ -8,5 +8,10 @@ namespace _Lemonade_Stand
 {
     class Day
     {
+
+        public void TodaysInfo()
+        {
+           
+        }
     }
 }
