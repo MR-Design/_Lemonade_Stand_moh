@@ -8,10 +8,12 @@ namespace _Lemonade_Stand
 {
     class Day
     {
+        Weather weather = new Weather();
 
         public void TodaysInfo()
         {
-           
+            weather.TodayForecast();
+
         }
     }
 }

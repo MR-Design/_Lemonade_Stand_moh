@@ -8,17 +8,16 @@ namespace _Lemonade_Stand
 {
     public class Weather
     {
-        int Cold; int Cloudy; int Muggy; int Sunny;
-        int todayWeather;
+         int Cold; int Cloudy; int Muggy; int Sunny;
+         int todayWeather; int todayTemp; int todayForecast;
 
-        private int GenerateDailyTemp()
+        public  void  GenerateDailyTemp()
         {
             Random random = new Random();
-            int todayTemp = random.Next(50, 110);
-            return todayTemp;  
+             todayTemp = random.Next(50, 110);
         }
 
-        private void GenerateDailyWeather()
+        public void GenerateDailyWeather()
         {
             Random random = new Random();
             todayWeather = random.Next(1, 4);
@@ -41,6 +40,12 @@ namespace _Lemonade_Stand
             }
         }
 
+        public void TodayForecast()
+        {
+            todayForecast = todayTemp + todayWeather;
+            Console.WriteLine("Here's the forecast for today :"+ todayForecast);
 
+
+        }
     }
 }
