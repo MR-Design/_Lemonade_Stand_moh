@@ -9,11 +9,20 @@ namespace _Lemonade_Stand
     class Player
     {
         Inventory inventory = new Inventory();
-        //   I want the basic Lemonade Stand gameplay to be present
-        //  double Wallet = 20.00;
-        //  int Lemons = 0; int Sugar = 0; int IceCubes = 0;
+  
+      
 
+            public void SetInventory()
+            {
+            Console.WriteLine(" You Have " + inventory.Numlemons + " : Lemons" +
+                inventory.Numsugar + " : Sugars" + inventory.NumiceCubes + " : Ice Cubes" + inventory.Numcups + " :  Cups");
+            Console.WriteLine(" Press any Key To Get More Inventories");
 
+            inventory.GetInventory();
+
+            }
+
+        
 
         //  the ability to make a recipe for my lemonade, 
         // so that I can include x-amount of lemons, x-amount of sugar, and x-amount of ice.
