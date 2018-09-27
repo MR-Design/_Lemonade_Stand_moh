@@ -42,8 +42,8 @@ namespace _Lemonade_Stand
 
         public void TodayForecast()
         {
-            todayForecast = todayTemp + todayWeather;
-            Console.WriteLine("Here's the forecast for today :"+ todayForecast);
+            string todayForecast = (todayTemp + todayWeather).ToString();
+            Console.WriteLine("Today's Forecast :"+ todayTemp +"Degrees and It's a "+ todayWeather+ " Day");
 
 
         }

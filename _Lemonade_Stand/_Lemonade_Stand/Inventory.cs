@@ -74,6 +74,11 @@ namespace _Lemonade_Stand
             }
         }
 
+
+
+
+        
+
         public void MakeRecipe()
         {
             Console.WriteLine("Alright let's Make a New Recipe");
@@ -88,6 +93,11 @@ namespace _Lemonade_Stand
             NumiceCubes = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Here's Your Recipe "+Numlemons+" lemons "+ NumSugar+" sugar And  "  +NumiceCubes+ " iceCubes");
+        }
+
+        public void DontMakeRecipe()
+        {
+
         }
         public void GetCostOfRecipe()
         {
