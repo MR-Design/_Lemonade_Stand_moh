@@ -8,13 +8,15 @@ namespace _Lemonade_Stand
 {
     class Player
     {
+        public Inventory inventory = new Inventory();
+
         int Lemons = 4; int Sugar = 4; int IceCubes = 4;
-        Inventory inventory = new Inventory();
-        Day day = new Day();
+        public double PerCupPrice;
+       
   
       
 
-            public void SetInventory()
+            public void SetInventory(Day day)
             {
                 Console.WriteLine(" You Have " + inventory.Numlemons + " : Lemons" +
                 inventory.NumSugar + " : Sugars" + inventory.NumiceCubes + " : Ice Cubes" + inventory.NumCups + " :  Cups");
@@ -23,8 +25,8 @@ namespace _Lemonade_Stand
                 Console.ReadKey();
 
                 inventory.GetInventory();
-                inventory.PlayerCanBuyOrNo();
-                day.TodaysInfo();
+                inventory.PlayerCanBuyOrNoAndMAkeRecipe();
+                day.TodaysInfo(inventory);
             }
 
         
@@ -37,32 +39,27 @@ namespace _Lemonade_Stand
                 string CustomRecipe = Console.ReadLine();
                 Console.WriteLine(CustomRecipe.ToUpper());
 
-                if (CustomRecipe == "YES")
+                if (CustomRecipe == "YES" || inventory.Wallet >= inventory.InventoryCost)// I shoud Check with Acctual Inventory.
                 {
                     inventory.MakeRecipe();
                 }
                 else
                 {
-                    // Break statement
-                }
-
-
-
+                Console.WriteLine("Okay We Stick With the Basic Recipe " + Lemons + " : Lemons"
+                    + Sugar + " : Sugars" + IceCubes + " : Ice Cubes");
+            }
              }
 
-            public void SetTodaysInfos()
+            public void SetTodaysInfos(Day day)
             {
-                 day.TodaysInfo();
+                 day.TodaysInfo(inventory);
             }
 
 
-        public int PerCupPrice;
             public void SetPrice()
             {
                     Console.WriteLine("Please Set Your Price Per Cup Choose Between  [ (0) To (1) ]");
-                    PerCupPrice = Convert.ToInt32(Console.ReadLine());
-
-
-        }
+                    PerCupPrice = Convert.ToDouble(Console.ReadLine());
+            }
     }
 }

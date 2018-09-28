@@ -11,11 +11,12 @@ namespace _Lemonade_Stand
         
         static void Main(string[] args)
         {
-            double x = 30; double y = 20; double a;
-            a = y - x;
-            Console.WriteLine(a);
-             a = Convert.ToInt32(Console.ReadLine());
-
+           //  Store store = new Store();
+            //Player player = new Player();
+            //player.inventory.Wallet = 20;
+            //store.SellLemons(player);
+            //Console.WriteLine(player.inventory.Wallet);
+            //Console.ReadLine();
         }
     }
 }

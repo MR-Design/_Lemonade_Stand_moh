@@ -6,13 +6,24 @@ using System.Threading.Tasks;
 
 namespace _Lemonade_Stand
 {
-    public class Inventory
+    public class Inventory  
     {
-        public double Picelemons = 100/1000; public double Picesugar = 50 /1000;
-        public double PiceCubes = 25 / 1000; public double Picecups = 20 / 1000;
-        double CostOfRecipe; public int Numlemons; public int NumSugar; public int NumiceCubes; public int NumCups;
-        public int nNlemons; public int nNsugar; public int nNiceCubes; public int nNcups;
-        double InventoryCost; 
+        // Player player = new Player();
+
+        public double Picelemons = 100/1000;
+        public double Picesugar = 50 /1000;
+        public double PiceCubes = 25 / 1000;
+        public double Picecups = 20 / 1000;
+        double CostOfRecipe = 78/100;
+        public int Numlemons;
+        public int NumSugar;
+        public int NumiceCubes;
+        public int NumCups;
+        public int nNlemons;
+        public int nNsugar;
+        public int nNiceCubes;
+        public int nNcups;
+        public double InventoryCost; 
         public double Wallet = 20.00;     
 
  //        I want the basic Lemonade Stand gameplay to be present
@@ -49,18 +60,18 @@ namespace _Lemonade_Stand
 
         public void GetInventoryCost()
         {
-            InventoryCost = (Numlemons * Picelemons) + (NumSugar * Picesugar) + (NumiceCubes * PiceCubes) + (NumCups * Picecups);
+            InventoryCost += (Numlemons * Picelemons) + (NumSugar * Picesugar) + (NumiceCubes * PiceCubes) + (NumCups * Picecups);
         }
         public void PlayerWallet()
         {
             Wallet -= InventoryCost;
         }
 
-        public void PlayerCanBuyOrNo()
+        public void PlayerCanBuyOrNoAndMAkeRecipe()
         {
             if (Wallet < 0)
             {
-                Console.WriteLine("Sorry You Don't have Money Start Game Gain");
+                Console.WriteLine("Sorry You Don't have Money !! Start The Game Gain");
 // Function to Start Game Agan from Scratch....
             }
             else if (Wallet <= InventoryCost)
@@ -101,7 +112,7 @@ namespace _Lemonade_Stand
         }
         public void GetCostOfRecipe()
         {
-            CostOfRecipe = (Numlemons * Picelemons) + (NumSugar * Picesugar) + (NumiceCubes * PiceCubes);
+            CostOfRecipe += (Numlemons * Picelemons) + (NumSugar * Picesugar) + (NumiceCubes * PiceCubes);
         }
 
         

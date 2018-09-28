@@ -8,8 +8,13 @@ namespace _Lemonade_Stand
 {
     public class Weather
     {
-         int Cold; int Cloudy; int Muggy; int Sunny;
-         int todayWeather; int todayTemp; int todayForecast;
+         int Cold;
+         int Cloudy;
+        int Muggy;
+        int Sunny;
+         int todayWeather;
+        int todayTemp;
+        int todayForecast;
 
         public  void  GenerateDailyTemp()
         {
