@@ -12,9 +12,12 @@ namespace _Lemonade_Stand
 
         int Lemons = 4; int Sugar = 4; int IceCubes = 4;
         public double PerCupPrice;
-       
-  
-      
+        public double todaySalles =0;
+        
+
+
+
+
 
             public void SetInventory(Day day)
             {
@@ -59,8 +62,43 @@ namespace _Lemonade_Stand
 
             public void SetPrice()
             {
-                    Console.WriteLine("Please Set Your Price Per Cup Choose Between  [ (0) To (1) ]");
+                    Console.WriteLine("Please Set Your Price Per Cup Choose Between  [ (0.00) To (1) ]");
                     PerCupPrice = Convert.ToDouble(Console.ReadLine());
             }
+            
+
+            public void Salles()
+            {
+
+            // Salles = PerCupPrice * TodaySalles
+
+            }
+
+            public void TodaySalles(Weather weather, Customer customer, Feeling feeling)
+            {
+                    Random customers = new Random();
+
+
+            if (weather.todayWeather == 1 && weather.todayTemp < 60 && customer.BuyingChanceByPrice == feeling.low)
+            {
+                todaySalles = customers.Next(0, 20); 
+            }
+            else if (weather.todayWeather == 2 && weather.todayTemp < 75 && customer.BuyingChanceByPrice == feeling.medium)
+            {
+                todaySalles = customers.Next(20, 50); 
+            }
+            else if (weather.todayWeather == 3 && weather.todayTemp < 90 && customer.BuyingChanceByPrice == feeling.hight)
+            {
+                todaySalles = customers.Next(50, 150); 
+            }
+            else if (weather.todayWeather > 3 && weather.todayTemp > 90 && customer.BuyingChanceByPrice == feeling.hight)
+                    {
+                        todaySalles = customers.Next(150, 200); 
+                    }
+            return ;
+
+        }
+  
     }
+
 }

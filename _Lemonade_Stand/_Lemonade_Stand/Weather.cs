@@ -12,9 +12,9 @@ namespace _Lemonade_Stand
          int Cloudy;
         int Muggy;
         int Sunny;
-         int todayWeather;
-        int todayTemp;
-        int todayForecast;
+         public double todayWeather;
+       public double todayTemp;
+       public  double todayForecast;
 
         public  void  GenerateDailyTemp()
         {

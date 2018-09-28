@@ -8,20 +8,24 @@ namespace _Lemonade_Stand
 {
     public class Feeling
     {
+        Random random = new Random();
         public double hight; public double medium; public double low;
-        double BuyingChanceByFeeling;
+        public  double BuyingChanceByFeeling;
+        public double inAHurry;
+        public double thirsty;
+        public double notThursty;
 
 
         public void BuyingChanceFeelingProperties()
         {
-            Random random = new Random();
+            
 
-            double hight = random.Next((90 / 100), 1);
-            double medium = random.Next((50 / 100), (90 / 100));
-            double low = random.Next(0, (50 / 100));
+             hight = random.Next((90 / 100), 1);
+             medium = random.Next((50 / 100), (90 / 100));
+             low = random.Next(0, (50 / 100));
         }
 
-        private double BuyingChancesByFeeling(double inAHurry, double thirsty, double notThursty)
+        public double BuyingChancesByFeeling()
         {
             if (BuyingChanceByFeeling == inAHurry)
             {

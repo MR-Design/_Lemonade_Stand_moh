@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace _Lemonade_Stand
 {
-    class Customer
+    public class Customer
     {
-        Feeling feeling = new Feeling();
-            double BuyingChanceByPrice;
-            double price;
+        public Feeling feeling = new Feeling();
+            public double BuyingChanceByPrice;
+           public double price;
             public void BuyingChancesByPrice()
             {
                 if (price <= 1 && price > 75 / 100)
