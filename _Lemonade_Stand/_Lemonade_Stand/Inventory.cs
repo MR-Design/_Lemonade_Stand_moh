@@ -116,6 +116,7 @@ namespace _Lemonade_Stand
         public void GetCostOfBasicRecipe()
         {
             CostOfBasicRecipe += (4 * Picelemons) + (4 * Picesugar) + (4 * PiceCubes) + (4 * Picecups);
+
         }
 
         
