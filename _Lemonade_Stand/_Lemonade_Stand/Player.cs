@@ -39,7 +39,7 @@ namespace _Lemonade_Stand
                 string CustomRecipe = Console.ReadLine();
                 Console.WriteLine(CustomRecipe.ToUpper());
 
-                if (CustomRecipe == "YES" || inventory.Wallet >= inventory.InventoryCost)// I shoud Check with Acctual Inventory.
+                if (CustomRecipe == "YES" || inventory.Wallet >= inventory.InventoryCost)// I shoud Check if Player Has enought Inventory.
                 {
                     inventory.MakeRecipe();
                 }
@@ -47,8 +47,9 @@ namespace _Lemonade_Stand
                 {
                 Console.WriteLine("Okay We Stick With the Basic Recipe " + Lemons + " : Lemons"
                     + Sugar + " : Sugars" + IceCubes + " : Ice Cubes");
+                     inventory.GetCostOfBasicRecipe();
+                }
             }
-             }
 
             public void SetTodaysInfos(Day day)
             {

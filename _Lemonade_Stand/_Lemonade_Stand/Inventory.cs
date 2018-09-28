@@ -14,7 +14,7 @@ namespace _Lemonade_Stand
         public double Picesugar = 50 /1000;
         public double PiceCubes = 25 / 1000;
         public double Picecups = 20 / 1000;
-        double CostOfRecipe = 78/100;
+        public double CostOfBasicRecipe ;
         public int Numlemons;
         public int NumSugar;
         public int NumiceCubes;
@@ -24,7 +24,8 @@ namespace _Lemonade_Stand
         public int nNiceCubes;
         public int nNcups;
         public double InventoryCost; 
-        public double Wallet = 20.00;     
+        public double Wallet = 20.00;
+        public double CurrentInvetory = 0;
 
  //        I want the basic Lemonade Stand gameplay to be present
 
@@ -46,9 +47,6 @@ namespace _Lemonade_Stand
             Console.WriteLine("You Have " + Numlemons + " Lemons " + NumSugar +
                 " Sugar And  " + NumiceCubes + " IceCubes" + NumCups + " Cups");
 
-            
-
-
             Numlemons += nNlemons;
             NumSugar += nNlemons;
             NumiceCubes += nNlemons;
@@ -57,11 +55,16 @@ namespace _Lemonade_Stand
         }
 
 
+        public void CurrentInvetories()
+        {
+            CurrentInvetory += (Numlemons) + (NumSugar) + (NumiceCubes) + (NumCups);
+        }
 
         public void GetInventoryCost()
         {
             InventoryCost += (Numlemons * Picelemons) + (NumSugar * Picesugar) + (NumiceCubes * PiceCubes) + (NumCups * Picecups);
         }
+     
         public void PlayerWallet()
         {
             Wallet -= InventoryCost;
@@ -110,9 +113,9 @@ namespace _Lemonade_Stand
         {
 
         }
-        public void GetCostOfRecipe()
+        public void GetCostOfBasicRecipe()
         {
-            CostOfRecipe += (Numlemons * Picelemons) + (NumSugar * Picesugar) + (NumiceCubes * PiceCubes);
+            CostOfBasicRecipe += (4 * Picelemons) + (4 * Picesugar) + (4 * PiceCubes) + (4 * Picecups);
         }
 
         
