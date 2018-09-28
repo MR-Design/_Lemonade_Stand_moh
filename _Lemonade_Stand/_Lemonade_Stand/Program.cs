@@ -11,12 +11,8 @@ namespace _Lemonade_Stand
         
         static void Main(string[] args)
         {
-           //  Store store = new Store();
-            //Player player = new Player();
-            //player.inventory.Wallet = 20;
-            //store.SellLemons(player);
-            //Console.WriteLine(player.inventory.Wallet);
-            //Console.ReadLine();
+            Game game = new Game();
+            game.RunGame();
         }
     }
 }

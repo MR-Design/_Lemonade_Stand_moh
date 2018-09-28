@@ -6,24 +6,26 @@ using System.Threading.Tasks;
 
 namespace _Lemonade_Stand
 {
-    class Game
+    public class Game
     {
         // member variables (HAS A)
-        Player player;
-        Store store;
+        public Player player = new Player();
+        // public Weather weather = new Weather();
+        public Day day = new Day();
+        //public Customer customer = new Customer();
+        // public Feeling feeling = new Feeling();
+        // public Inventory inventory = new Inventory()
 
-        public Game()
-        {
-            player = new Player();
-            store = new Store();
-        }
+
 
         public void RunGame()
         {
-            // do stuff
-            // do more stuff
-            store.SellLemons(player);
-            // end day stuff
+            player.SetInventory(day);
+            player.SetRecipe();
+            player.SetTodaysInfos(day);
+            player.SetPrice();
+            player.MoneyMadeToday(day);
+            player.GetProfit();
         }
     }
 }

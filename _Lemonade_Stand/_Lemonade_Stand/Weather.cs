@@ -8,10 +8,10 @@ namespace _Lemonade_Stand
 {
     public class Weather
     {
-         int Cold;
-         int Cloudy;
-        int Muggy;
-        int Sunny;
+         double Cold;
+         double Cloudy;
+        double Muggy;
+        double Sunny;
          public double todayWeather;
        public double todayTemp;
        public  double todayForecast;

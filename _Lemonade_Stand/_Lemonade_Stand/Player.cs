@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _Lemonade_Stand
 {
-    class Player
+    public class Player
     {
         public Inventory inventory = new Inventory();
 
@@ -43,7 +43,7 @@ namespace _Lemonade_Stand
             string CustomRecipe = Console.ReadLine();
             Console.WriteLine(CustomRecipe.ToUpper());
 
-            if (CustomRecipe == "YES" || inventory.Wallet >= inventory.InventoryCost)// I shoud Check if Player Has enought Inventory.
+            if (CustomRecipe == "YES" )// I shoud Check if Player Have enought Inventory to
             {
                 inventory.MakeRecipe();
             }
@@ -68,7 +68,7 @@ namespace _Lemonade_Stand
        }
             
 
-        public void Salles( Day day)
+        public void MoneyMadeToday( Day day)// 
         {
             inventory.Wallet += day.todaySalles* PerCupPrice;
         }
@@ -76,9 +76,12 @@ namespace _Lemonade_Stand
         public void GetProfit()
         {
             profit += (inventory.Wallet) - inventory.InventoryCost;
+            Console.WriteLine("Your Profit Is  "+ profit);
 
+            // questio : If I save my results in a Console does the results weill Updated when I loop for 7 Days 
+            // Or shoud I put Them When I run My Game.
         }
-  
+
     }
 
 }

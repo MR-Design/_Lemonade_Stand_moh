@@ -10,10 +10,10 @@ namespace _Lemonade_Stand
     {
         // Player player = new Player();
 
-        public double Picelemons = 100/1000;
-        public double Picesugar = 50 /1000;
-        public double PiceCubes = 25 / 1000;
-        public double Picecups = 20 / 1000;
+        public double Picelemons = 0.1;
+        public double Picesugar = 0.05;
+        public double PiceCubes = 0.02;
+        public double Picecups = 0.02;
         public double CostOfBasicRecipe ;
         public int Numlemons;
         public int NumSugar;
@@ -75,7 +75,7 @@ namespace _Lemonade_Stand
             if (Wallet < 0)
             {
                 Console.WriteLine("Sorry You Don't have Money !! Start The Game Gain");
-// Function to Start Game Agan from Scratch....
+// I need Function to Start Game Agan from Scratch.... Try !! Catch
             }
             else if (Wallet <= InventoryCost)
             {
@@ -87,10 +87,6 @@ namespace _Lemonade_Stand
                 Console.WriteLine(" You Still Have " + "$ " + Wallet);
             }
         }
-
-
-
-
         
 
         public void MakeRecipe()

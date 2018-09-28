@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _Lemonade_Stand
 {
-    class Day
+    public class Day
     {
         Weather weather = new Weather();
         public double todaySalles = 0;
@@ -16,7 +16,7 @@ namespace _Lemonade_Stand
             weather.TodayForecast();
         }
 
-        public void TodaySalles(Customer customer, Feeling feeling)
+        public void GetTodayNumberOfSalles(Customer customer, Feeling feeling)
         {
             Random customers = new Random();
 
