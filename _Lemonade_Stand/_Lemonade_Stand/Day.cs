@@ -8,6 +8,8 @@ namespace _Lemonade_Stand
 {
     public class Day
     {
+
+
         public Weather weather = new Weather();
         public int todaySalles;
         public void TodaysInfo(Inventory inventory)
@@ -32,7 +34,7 @@ namespace _Lemonade_Stand
             {
                 todaySalles += customers.Next(20, 50);
             }
-            else if (weather.todayForecast == "Muggy" && weather.todayTemp < 90 && feeling.BuyingChanceByFeeling >49) //&& customer.BuyingChanceByPrice == feeling.hight)
+            else if (weather.todayForecast == "Muggy" && weather.todayTemp < 90 && feeling.BuyingChanceByFeeling <49) //&& customer.BuyingChanceByPrice == feeling.hight)
             {
                 todaySalles += customers.Next(50, 150);
             }
@@ -46,5 +48,11 @@ namespace _Lemonade_Stand
             Console.ReadLine();
 
         }
+
+        public void getDay()
+        {
+
+        } 
     }
 }
+
