@@ -13,11 +13,11 @@ namespace _Lemonade_Stand
            public double price;
             public void BuyingChancesByPrice()
             {
-                if (price <= 1 && price > 75 / 100)
+                if (price <= 1 && price > 0.75)
                 {
                     BuyingChanceByPrice = feeling.low;
                 }
-                else if (price < 74 / 100 && price > 50 / 100)
+                else if (price < 0.74 && price > 0.5)
                 {
                     BuyingChanceByPrice = feeling.medium;
                 }

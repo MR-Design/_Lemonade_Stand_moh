@@ -15,10 +15,10 @@ namespace _Lemonade_Stand
         public double PiceCubes = 0.02;
         public double Picecups = 0.02;
         public double CostOfBasicRecipe ;
-        public int Numlemons;
-        public int NumSugar;
-        public int NumiceCubes;
-        public int NumCups;
+        public int Numlemons =0;
+        public int NumSugar =0;
+        public int NumiceCubes=0;
+        public int NumCups=0;
         public int nNlemons;
         public int nNsugar;
         public int nNiceCubes;
@@ -32,26 +32,29 @@ namespace _Lemonade_Stand
         public void GetInventory()
         {
 
-            Console.WriteLine("Enter How Many Lemens you Would Like .. NOTE!! Will Cost You $"+ Picelemons);
+            Console.WriteLine("Enter How Many Lemens you Would Like .. !! Will Cost You $"+ Picelemons);
             nNlemons = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Enter How Many Sugar you Would Like.. NOTE!! Will Cost You $" + Picesugar);
+            Console.WriteLine("Enter How Many Sugar you Would Like.. !! Will Cost You $" + Picesugar);
             nNsugar = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Enter How Many Lemens you Would Like.. NOTE!! Will Cost You $" + PiceCubes);
+            Console.WriteLine("Enter How Many Lemens you Would Like.. !! Will Cost You $" + PiceCubes);
             nNiceCubes = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Enter How Many Cuop you Would Like.. NOTE!! Will Cost You $" + Picecups);
+            Console.WriteLine("Enter How Many Cuop you Would Like.. !! Will Cost You $" + Picecups);
             nNcups = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("You Have " + Numlemons + " Lemons " + NumSugar +
-                " Sugar And  " + NumiceCubes + " IceCubes" + NumCups + " Cups");
+            
 
             Numlemons += nNlemons;
-            NumSugar += nNlemons;
-            NumiceCubes += nNlemons;
-            NumCups += nNlemons;
+            NumSugar += nNsugar;
+            NumiceCubes += nNiceCubes;
+            NumCups += nNcups;
 
+            Console.WriteLine("You Bought  "+Numlemons+"Lemons " + NumSugar+
+                "Sugar And  "+NumiceCubes+"IceCubes "+NumCups+" Cups");
+            GetInventoryCost();
+            PlayerWallet();
         }
 
 
@@ -64,10 +67,11 @@ namespace _Lemonade_Stand
         {
             InventoryCost += (Numlemons * Picelemons) + (NumSugar * Picesugar) + (NumiceCubes * PiceCubes) + (NumCups * Picecups);
         }
-     
+
         public void PlayerWallet()
         {
             Wallet -= InventoryCost;
+            Console.WriteLine("Money Left In Your Wallet $" + Wallet);
         }
 
         public void PlayerCanBuyOrNoAndMAkeRecipe()
@@ -84,7 +88,7 @@ namespace _Lemonade_Stand
             }
             else
             {
-                Console.WriteLine(" You Still Have " + "$ " + Wallet);
+          //      Console.WriteLine(" You Still Have " + "$ " + Wallet);
             }
         }
         

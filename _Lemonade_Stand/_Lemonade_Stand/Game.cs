@@ -12,8 +12,8 @@ namespace _Lemonade_Stand
         public Player player = new Player();
         // public Weather weather = new Weather();
         public Day day = new Day();
-        //public Customer customer = new Customer();
-        // public Feeling feeling = new Feeling();
+        public Customer customer = new Customer();
+        public Feeling feeling = new Feeling();
         // public Inventory inventory = new Inventory()
 
 
@@ -24,6 +24,7 @@ namespace _Lemonade_Stand
             player.SetRecipe();
             player.SetTodaysInfos(day);
             player.SetPrice();
+            day.GetTodayNumberOfSalles(customer, feeling);
             player.MoneyMadeToday(day);
             player.GetProfit();
         }

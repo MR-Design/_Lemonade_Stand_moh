@@ -20,9 +20,9 @@ namespace _Lemonade_Stand
         {
             
 
-             hight = random.Next((90 / 100), 1);
-             medium = random.Next((50 / 100), (90 / 100));
-             low = random.Next(0, (50 / 100));
+             hight = random.Next(90, 100);
+             medium = random.Next(50, 90);
+             low = random.Next(50, 100);
         }
 
         public double BuyingChancesByFeeling()

@@ -22,13 +22,14 @@ namespace _Lemonade_Stand
 
         public void SetInventory(Day day)
         {
-            Console.WriteLine(" You Have " + inventory.Numlemons + " : Lemons" +
-            inventory.NumSugar + " : Sugars" + inventory.NumiceCubes + " : Ice Cubes" + inventory.NumCups + " :  Cups");
-            Console.WriteLine(" You Have " + "$ "+inventory.Wallet);
+            Console.WriteLine(" You Have " + inventory.Numlemons + ":Lemons " +
+            inventory.NumSugar + ": Sugars  " + inventory.NumiceCubes +":Ice Cubes " + inventory.NumCups + ":Cups  In Your Inventory");
+            Console.WriteLine(" Total Money You Have  " + "$ "+inventory.Wallet);
             Console.WriteLine(" Press any Key To Get More Inventories");
             Console.ReadKey();
 
             inventory.GetInventory();
+            // Need To Tell Playyer How Much Money Left
             inventory.PlayerCanBuyOrNoAndMAkeRecipe();
             day.TodaysInfo(inventory);
         }
@@ -60,17 +61,22 @@ namespace _Lemonade_Stand
                 day.TodaysInfo(inventory);
         }
 
-
-       public void SetPrice()
+      
+        public void SetPrice()  
        {
-        Console.WriteLine("Please Set Your Price Per Cup Choose Between  [ (0.00) To (1) ]");
-        PerCupPrice = Convert.ToDouble(Console.ReadLine());
-       }
+            Console.WriteLine("Please Set Your Price Per Cup Choose Between  [ (0.00) To (1) ]");
+            PerCupPrice = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("your Price for today  $"+ PerCupPrice);
+            Console.ReadLine();
+        }
             
 
-        public void MoneyMadeToday( Day day)// 
+        public void MoneyMadeToday( Day day)
         {
+            inventory.PlayerWallet();
             inventory.Wallet += day.todaySalles* PerCupPrice;
+            Console.WriteLine("You Made Today $"+ inventory.Wallet);
+            Console.ReadLine();
         }
 
         public void GetProfit()
