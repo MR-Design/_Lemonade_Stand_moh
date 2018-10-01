@@ -32,16 +32,16 @@ namespace _Lemonade_Stand
         public void GetInventory()
         {
 
-            Console.WriteLine("Enter How Many Lemens you Would Like .. !! Will Cost You $"+ Picelemons);
+            Console.WriteLine("Enter How Many Lemens you Would Like .. !!  Cost  $"+ Picelemons);
             nNlemons = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Enter How Many Sugar you Would Like.. !! Will Cost You $" + Picesugar);
+            Console.WriteLine("Enter How Many Sugar you Would Like.. !!  Cost  $" + Picesugar);
             nNsugar = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Enter How Many Lemens you Would Like.. !! Will Cost You $" + PiceCubes);
+            Console.WriteLine("Enter How Many Ice Cubes you Would Like.. !!  Cost  $" + PiceCubes);
             nNiceCubes = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Enter How Many Cuop you Would Like.. !! Will Cost You $" + Picecups);
+            Console.WriteLine("Enter How Many Cups you Would Like.. !!  Cost  $" + Picecups);
             nNcups = Convert.ToInt32(Console.ReadLine());
 
             
@@ -66,6 +66,7 @@ namespace _Lemonade_Stand
         public void GetInventoryCost()
         {
             InventoryCost += (Numlemons * Picelemons) + (NumSugar * Picesugar) + (NumiceCubes * PiceCubes) + (NumCups * Picecups);
+            Console.WriteLine("Your Inventory Cost =  $" + InventoryCost);
         }
 
         public void PlayerWallet()
@@ -78,7 +79,7 @@ namespace _Lemonade_Stand
         {
             if (Wallet < 0)
             {
-                Console.WriteLine("Sorry You Don't have Money !! Start The Game Gain");
+                Console.WriteLine("Sorry You Don't have Money !! Maybe you wanna Start The Game Again?");
 // I need Function to Start Game Agan from Scratch.... Try !! Catch
             }
             else if (Wallet <= InventoryCost)

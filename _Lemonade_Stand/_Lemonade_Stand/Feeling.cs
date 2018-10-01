@@ -10,38 +10,41 @@ namespace _Lemonade_Stand
     {
         Random random = new Random();
         public double hight; public double medium; public double low;
-        public  double BuyingChanceByFeeling;
-        public double inAHurry;
-        public double thirsty;
-        public double notThursty;
+        public int BuyingChanceByFeeling;
+        public double GenerateBuyingChanceByFeeling;
+        //public double inAHurry;
+        //public double thirsty;
+        //public double notThursty;
 
 
         public void BuyingChanceFeelingProperties()
         {
-            
 
-             hight = random.Next(90, 100);
-             medium = random.Next(50, 90);
-             low = random.Next(50, 100);
+
+            GenerateBuyingChanceByFeeling = random.Next(1, 3);
+           
         }
 
-        public double BuyingChancesByFeeling()
+        public void BuyingChancesByFeeling()
         {
-            if (BuyingChanceByFeeling == inAHurry)
+            BuyingChanceFeelingProperties();
+            if (GenerateBuyingChanceByFeeling ==1)
             {
-                BuyingChanceByFeeling = medium;
+                BuyingChanceByFeeling = random.Next(0, 20);
             }
-            else if (BuyingChanceByFeeling == thirsty)
+            else if (GenerateBuyingChanceByFeeling == 2)
             {
-                BuyingChanceByFeeling = hight;
+                BuyingChanceByFeeling = random.Next(20, 50); 
             }
-            else
+            else if (GenerateBuyingChanceByFeeling == 3)
             {
-                BuyingChanceByFeeling = low;
+                BuyingChanceByFeeling = random.Next(50, 100);
 
             }
 
-            return BuyingChanceByFeeling;
+            Console.WriteLine("customer feeling   = " + BuyingChanceByFeeling);
+            Console.ReadLine();
+            //return BuyingChanceByFeeling;
         }
     }
 }

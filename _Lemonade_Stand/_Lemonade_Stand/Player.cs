@@ -10,11 +10,12 @@ namespace _Lemonade_Stand
     {
         public Inventory inventory = new Inventory();
 
-        int Lemons = 4; int Sugar = 4; int IceCubes = 4;
+        public int Lemons = 4; public int Sugar = 4; public int IceCubes = 4;
         public double PerCupPrice;
         public double profit;
-       
-        
+        public double TodaySalles;
+
+
 
 
 
@@ -31,7 +32,7 @@ namespace _Lemonade_Stand
             inventory.GetInventory();
             // Need To Tell Playyer How Much Money Left
             inventory.PlayerCanBuyOrNoAndMAkeRecipe();
-            day.TodaysInfo(inventory);
+            //day.TodaysInfo(inventory);
         }
 
         
@@ -64,7 +65,7 @@ namespace _Lemonade_Stand
       
         public void SetPrice()  
        {
-            Console.WriteLine("Please Set Your Price Per Cup Choose Between  [ (0.00) To (1) ]");
+            Console.WriteLine("Please Set Your Price Per Cup Choose Between  [ ($0.00) To ($1.00) ]");
             PerCupPrice = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("your Price for today  $"+ PerCupPrice);
             Console.ReadLine();
@@ -73,16 +74,25 @@ namespace _Lemonade_Stand
 
         public void MoneyMadeToday( Day day)
         {
-            inventory.PlayerWallet();
-            inventory.Wallet += day.todaySalles* PerCupPrice;
-            Console.WriteLine("You Made Today $"+ inventory.Wallet);
+           // inventory.PlayerWallet();
+
+            TodaySalles += day.todaySalles * PerCupPrice;
+            inventory.Wallet += TodaySalles;
+
+            Console.WriteLine("You Made Today $" + TodaySalles);
+            Console.WriteLine("Here Your New Wallet $" + inventory.Wallet);
+          
+
             Console.ReadLine();
+
+          
         }
 
         public void GetProfit()
         {
-            profit += (inventory.Wallet) - inventory.InventoryCost;
-            Console.WriteLine("Your Profit Is  "+ profit);
+            profit = (inventory.Wallet) - inventory.InventoryCost;
+            Console.WriteLine("Your Profit Today Was  $"+ profit);
+            Console.ReadLine();
 
             // questio : If I save my results in a Console does the results weill Updated when I loop for 7 Days 
             // Or shoud I put Them When I run My Game.
