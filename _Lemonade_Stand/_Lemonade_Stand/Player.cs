@@ -48,6 +48,8 @@ namespace _Lemonade_Stand
             if (CustomRecipe == "YES" )// I shoud Check if Player Have enought Inventory to
             {
                 inventory.MakeRecipe();
+                
+                
             }
             else
             {
@@ -62,13 +64,28 @@ namespace _Lemonade_Stand
                 day.TodaysInfo(inventory);
         }
 
-      
+     
         public void SetPrice()  
        {
-            Console.WriteLine("Please Set Your Price Per Cup Choose Between  [ ($0.00) To ($1.00) ]");
-            PerCupPrice = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("your Price for today  $"+ PerCupPrice);
-            Console.ReadLine();
+            
+            
+                Console.WriteLine("Please Set Your Price Per Cup Choose Between  [ ($0.00) To ($1.00) ]");
+                PerCupPrice = Convert.ToDouble(Console.ReadLine());
+                if (PerCupPrice <= 1)
+                {
+                    Console.WriteLine("your Price for today  $" + PerCupPrice);
+                    Console.ReadLine();
+                }
+                else
+                {
+                    Console.WriteLine("SORRY !! INVALID INPUT... Try Another Price.");
+                    Console.ReadLine();
+                    SetPrice();
+                }
+            
+      
+            
+           
         }
             
 
@@ -78,8 +95,8 @@ namespace _Lemonade_Stand
 
             TodaySalles += day.todaySalles * PerCupPrice;
             inventory.Wallet += TodaySalles;
-
-            Console.WriteLine("You Made Today $" + TodaySalles);
+          
+            Console.WriteLine("You Made On Salles $" + TodaySalles);
             Console.WriteLine("Here Your New Wallet $" + inventory.Wallet);
           
 
@@ -91,11 +108,9 @@ namespace _Lemonade_Stand
         public void GetProfit()
         {
             profit = (inventory.Wallet) - inventory.InventoryCost;
-            Console.WriteLine("Your Profit Today Was  $"+ profit);
+            Console.WriteLine("Your Total Profit  is  $"+ profit);
             Console.ReadLine();
-
-            // questio : If I save my results in a Console does the results weill Updated when I loop for 7 Days 
-            // Or shoud I put Them When I run My Game.
+            
         }
 
     }

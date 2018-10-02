@@ -21,8 +21,19 @@ namespace _Lemonade_Stand
 
         public void RotateGame()
         {
-            Console.WriteLine(" Press any Number To Play An Other Day ");
-            GameDay = Convert.ToInt32(Console.ReadLine());
+
+            try
+            {
+                Console.WriteLine(" Press any Number To Play An Other Day ");
+                GameDay = Convert.ToInt32(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine(" Please Enter a Valid Number ");
+                Console.ReadLine();
+                RotateGame();
+            }
+            
             GameRotation = GameDay++;
             if (GameDay < 8)
             {
@@ -38,7 +49,8 @@ namespace _Lemonade_Stand
                  Restart = Console.ReadLine();
                 if (Restart == "S")
                 {
-                    //  Run a New Game Here
+                    Console.Clear();
+                    RunGame();
                 }
             }
         }

@@ -32,19 +32,60 @@ namespace _Lemonade_Stand
         public void GetInventory()
         {
 
-            Console.WriteLine("Enter How Many Lemens you Would Like .. !!  Cost  $"+ Picelemons);
-            nNlemons = Convert.ToInt32(Console.ReadLine());
+            try
+            {
+                Console.WriteLine("Enter How Many Lemens you Would Like .. !!  Cost  $" + Picelemons);
+                nNlemons = Convert.ToInt32(Console.ReadLine());
+            }
+            catch
+            {
+                
+                Console.WriteLine("Please  try again ! Make Sure you Enter a Valid Number");
+                Console.ReadLine();
+                GetInventory();
+            }
 
-            Console.WriteLine("Enter How Many Sugar you Would Like.. !!  Cost  $" + Picesugar);
-            nNsugar = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Enter How Many Ice Cubes you Would Like.. !!  Cost  $" + PiceCubes);
-            nNiceCubes = Convert.ToInt32(Console.ReadLine());
+            try
+            {
+                Console.WriteLine("Enter How Many Sugar you Would Like.. !!  Cost  $" + Picesugar);
+                nNsugar = Convert.ToInt32(Console.ReadLine());
+            }
+            catch
+            {
+                
+                Console.WriteLine("Please  try again ! Make Sure you Enter a Valid Number");
+                Console.ReadLine();
+                GetInventory();
+            }
 
-            Console.WriteLine("Enter How Many Cups you Would Like.. !!  Cost  $" + Picecups);
-            nNcups = Convert.ToInt32(Console.ReadLine());
 
-            
+            try
+            {
+                Console.WriteLine("Enter How Many Ice Cubes you Would Like.. !!  Cost  $" + PiceCubes);
+                nNiceCubes = Convert.ToInt32(Console.ReadLine());
+            }
+            catch
+            {
+                
+                Console.WriteLine("Please  try again ! Make Sure you Enter a Valid Number");
+                Console.ReadLine();
+                GetInventory();
+            }
+
+            try
+            {
+                Console.WriteLine("Enter How Many Cups you Would Like.. !!  Cost  $" + Picecups);
+                nNcups = Convert.ToInt32(Console.ReadLine());
+            }
+            catch
+            {
+                
+                Console.WriteLine("Please  try again ! Make Sure you Enter a Valid Number");
+                Console.ReadLine();
+                GetInventory();
+            }
+
 
             Numlemons += nNlemons;
             NumSugar += nNsugar;
@@ -96,16 +137,46 @@ namespace _Lemonade_Stand
 
         public void MakeRecipe()
         {
-            Console.WriteLine("Alright let's Make a New Recipe");
+            Console.WriteLine(" Let's Make a New Recipe");
 
-            Console.WriteLine("Enter How Many Lemens you Would Like");
-            Numlemons = Convert.ToInt32(Console.ReadLine());
+            try
+            {
+                Console.WriteLine("Enter How Many Lemens you Would Like");
+                Numlemons = Convert.ToInt32(Console.ReadLine());
+            }
+            catch
+            {
+                
+                Console.WriteLine("Please  try again ! Make Sure you Enter a Valid Number");
+                Console.ReadLine();
+                MakeRecipe();
+            }
 
-            Console.WriteLine("Enter How Many Sugar you Would Like");
-            NumSugar = Convert.ToInt32(Console.ReadLine());
+            try
+            {
+                Console.WriteLine("Enter How Many Sugar you Would Like");
+                NumSugar = Convert.ToInt32(Console.ReadLine());
+            }
+            catch
+            {
+               
+                Console.WriteLine("Please  try again ! Make Sure you Enter a Valid Number");
+                Console.ReadLine();
+                MakeRecipe();
+            }
 
-            Console.WriteLine("Enter How Many Lemens you Would Like");
-            NumiceCubes = Convert.ToInt32(Console.ReadLine());
+            try
+            {
+                Console.WriteLine("Enter How Many Lemens you Would Like");
+                NumiceCubes = Convert.ToInt32(Console.ReadLine());
+            }
+            catch
+            {
+               
+                Console.WriteLine("Please  try again ! Make Sure you Enter a Valid Number");
+                Console.ReadLine();
+                MakeRecipe();
+            }
 
             Console.WriteLine("Here's Your Recipe "+Numlemons+" lemons "+ NumSugar+" sugar And  "  +NumiceCubes+ " iceCubes");
         }
